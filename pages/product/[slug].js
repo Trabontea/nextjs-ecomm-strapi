@@ -32,7 +32,7 @@ export default function ProductDetails() {
   if (fetching) return <p>Loading...</p>
   if (error) return <p>Oh no ...{error.message}</p>
   // extract Data
-  console.log('data', data);
+  console.log('data', data)
   const { title, description, image, price } = data.products.data[0].attributes
 
   return (
@@ -44,7 +44,7 @@ export default function ProductDetails() {
         <p>{price}</p>
 
         <Quantity>
-          <span>Quantity: </span>
+          <span>Quantity:</span>
           <button>
             <AiFillMinusCircle onClick={decreaseQty} />
           </button>

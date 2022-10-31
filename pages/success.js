@@ -60,11 +60,12 @@ export default function Success({ order }) {
               </div>
             ))}
             <h2>Transport: {order.shipping_cost.amount_total / 100}</h2>
-            <h2>Suma totala: {order.amount_total / 100}</h2>
+            <h2>Subtotal: {order.amount_subtotal / 100} RON</h2>
+            <h3>Suma totala: {order.amount_total / 100} RON</h3>
           </OrderInfo>
         </InfoWrapper>
         <button onClick={() => route.push('/')}>Continue Shopping</button>
-        <Image src={shiba} alt="shiba" />
+        <Image src={shiba} alt="shiba" width="250px" height="250px" />
       </Card>
     </Wrapper>
   )
@@ -96,10 +97,12 @@ const Card = styled(motion.div)`
 const Address = styled.div`
   font-size: 1rem;
   width: 100%;
+  text-align: center;
 `
 const OrderInfo = styled.div`
   font-size: 1rem;
   width: 100%;
+  text-align: center;
   div {
     padding-bottom: 1rem;
   }
@@ -108,8 +111,7 @@ const InfoWrapper = styled.div`
   display: flex;
   max-width: 800px;
   width: 100%;
-
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 1rem;
 `
